@@ -5,7 +5,7 @@ const OneTable = ({ interestArray, mapInterestCalculations }) => {
     <Table size="sm" hover="true" striped="true">
       <thead>
         <tr>
-          <th>Interest</th>
+          <th>Interest %</th>
           <th>Months</th>
           <th>Years and Months</th>
         </tr>

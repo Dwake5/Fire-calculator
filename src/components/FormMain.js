@@ -9,8 +9,8 @@ const FormMain = (props) => {
           <Col md={6} lg={4}>
 
             <Form.Group controlId="InvestmentsTotal">
-              <Form.Label className="pt-md-4">
-                Current investments:
+              <Form.Label>
+                Current investments
               </Form.Label>
               <Form.Control
                 value={props.curInvestments}
@@ -22,7 +22,7 @@ const FormMain = (props) => {
             </Form.Group>
 
             <Form.Group controlId="InvestmentsPerYear">
-              <Form.Label>Investments per year:</Form.Label>
+              <Form.Label>How much are you investing per year</Form.Label>
               <Form.Control
                 value={props.investmentsPerYear}
                 onChange={(e) => props.setInvestmentsPerYear(+e.target.value)}
@@ -38,7 +38,7 @@ const FormMain = (props) => {
             
             <Form.Group controlId="RetirementSpending">
               <Form.Label>
-                How much do you want to spend a year in retirement:
+                Yearly spending in retirement
               </Form.Label>
               <Form.Control
                 value={props.retirementSpending}
@@ -50,7 +50,7 @@ const FormMain = (props) => {
             </Form.Group>
 
             <Form.Group className="mb-0" controlId="Investments">
-              <Form.Label>Safe withdrawal rate %:</Form.Label>
+              <Form.Label>Safe withdrawal rate %</Form.Label>
               <Form.Control
                 value={props.SWR}
                 onChange={(e) => props.setSWR(e.target.value)}

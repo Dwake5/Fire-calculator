@@ -29,12 +29,8 @@ const Results = ({ curInvestments, investmentsPerYear, moneyNeeded }) => {
   const updateInterestArray = () => {
     interestArray = [];
     if (interestStep < 0.1) return [];
-    for (
-      let interest = minInterest;
-      interest <= maxInterest;
-      interest += interestStep
-    ) {
-      const fixedInterest = interest.toFixed(1);
+    for (let i = minInterest; i <= maxInterest; i += interestStep) {
+      const fixedInterest = i.toFixed(1);
       interestArray.push(fixedInterest);
     }
     interestArray.push("8.2");
@@ -113,10 +109,6 @@ const Results = ({ curInvestments, investmentsPerYear, moneyNeeded }) => {
   }, [minInterest, maxInterest, interestStep]);
 
   useEffect(() => {
-    if (interestStep < 0.1) setInterestStep(0.1);
-  }, [interestStep]);
-
-  useEffect(() => {
     if (maxInterest > 200) setMaxInterest(200);
   }, [maxInterest]);
 
@@ -178,8 +170,8 @@ const Results = ({ curInvestments, investmentsPerYear, moneyNeeded }) => {
       {curInvestments >= moneyNeeded && moneyNeeded > 0 && (
         <h2 className="mt-3 text-center">You already have enough to retire!</h2>
       )}
-      {moneyNeeded === 0 && (
-        <h3 className="mt-3 text-center">Please fill in the above.</h3>
+      {(moneyNeeded === 0 || interestStep < 0.1) && (
+        <h3 className="mt-3 text-center">Please fill in the above</h3>
       )}
 
       {doChecks() && showTable()}

@@ -12,7 +12,7 @@ const TwoTables = ({interestArray, mapInterestCalculations}) => {
       <Table className="smallTable" size="sm" hover="true" striped="true">
         <thead>
           <tr>
-            <th>Interest</th>
+            <th>Interest %</th>
             <th>Months</th>
             <th>Years and Months</th>
           </tr>
@@ -27,7 +27,7 @@ const TwoTables = ({interestArray, mapInterestCalculations}) => {
       <Table className="leftBorder smallTable" size="sm" hover="true" striped="true">
         <thead>
           <tr>
-            <th>Interest</th>
+            <th>Interest %</th>
             <th>Months</th>
             <th>Years and Months</th>
           </tr>
